@@ -2105,6 +2105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936367626}
   - component: {fileID: 1936367625}
+  - component: {fileID: 1936367627}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2124,25 +2125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2e215ef1d721a4490d12ce6fc64f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  looseBlockPrefab: {fileID: 8908541526291351472, guid: 9854fe6a8d7a38d4892187ed3d1ad6de, type: 3}
-  snakeControllerPrefab: {fileID: 4899679238750724053, guid: 5969d13ba2ac2f549814bad4f2a0f7a1, type: 3}
-  snakeBlockPrefab: {fileID: 5626615595368357911, guid: 487246bcb1d02d44ca94cf1ff6dc11b7, type: 3}
+  playerList: []
+  enemyList: []
   countdownTxt: {fileID: 2101415310}
   backgroundImg: {fileID: 526911464}
+  objSpawnerManager: {fileID: 1936367627}
   setupPlayersController: {fileID: 1648934967}
   leaderBoardController: {fileID: 323574550}
-  minSize: {x: -9, y: -4}
-  maxSize: {x: 9, y: 4}
-  blockSprites:
-  - {fileID: -16732673968519109, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
-  - {fileID: 3517430460548618356, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
-  - {fileID: -7375210357109224222, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
-  - {fileID: 7214070516201223787, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
-  - {fileID: -4951153890387012367, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
-  LooseBlockSprites:
-  - {fileID: -9214902637632914571, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
-  - {fileID: 3336276835460752498, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
-  - {fileID: 7017662967299639917, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
 --- !u!4 &1936367626
 Transform:
   m_ObjectHideFlags: 0
@@ -2158,6 +2147,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1936367627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936367624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1929aec99acb80d49bef4847bd8d279e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  looseBlockPrefab: {fileID: 8908541526291351472, guid: 9854fe6a8d7a38d4892187ed3d1ad6de, type: 3}
+  snakeControllerPrefab: {fileID: 4899679238750724053, guid: 5969d13ba2ac2f549814bad4f2a0f7a1, type: 3}
+  snakeBlockPrefab: {fileID: 5626615595368357911, guid: 487246bcb1d02d44ca94cf1ff6dc11b7, type: 3}
+  minSize: {x: -9, y: -4}
+  maxSize: {x: 9, y: 4}
+  blockSprites:
+  - {fileID: -16732673968519109, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
+  - {fileID: 3517430460548618356, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
+  - {fileID: -7375210357109224222, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
+  - {fileID: 7214070516201223787, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
+  - {fileID: -4951153890387012367, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
+  LooseBlockSprites:
+  - {fileID: -9214902637632914571, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
+  - {fileID: 3336276835460752498, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
+  - {fileID: 7017662967299639917, guid: f32ec4c2ce5489a4e9bb741b3f682507, type: 3}
 --- !u!1 &2101415308
 GameObject:
   m_ObjectHideFlags: 0
