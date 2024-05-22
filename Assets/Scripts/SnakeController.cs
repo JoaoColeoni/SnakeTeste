@@ -81,7 +81,7 @@ public class SnakeController : MonoBehaviour
                         block.blockType = BlockType.Regular;
                         block.GetComponent<SpriteRenderer>().sprite = GameManager.Instance.SpriteSelector(BlockType.Regular,snakeBlocks.IndexOf(block));
                         Saved = true;
-                        continue;
+                        break;
                     }
                 }
             }
