@@ -79,7 +79,7 @@ public class SnakeController : MonoBehaviour
                     if(block.blockType == BlockType.Ram)
                     {
                         block.blockType = BlockType.Regular;
-                        block.GetComponent<SpriteRenderer>().sprite = GameManager.Instance.SpriteSelector(BlockType.Regular,snakeBlocks.IndexOf(block));
+                        block.GetComponent<SpriteRenderer>().sprite = GameManager.Instance.objSpawnerManager.SpriteSelector(BlockType.Regular,snakeBlocks.IndexOf(block));
                         Saved = true;
                         break;
                     }
@@ -112,7 +112,7 @@ public class SnakeController : MonoBehaviour
         }
         else if(GetComponent<IAInputs>())
         {
-            Vector2 respawnPosition = GameManager.Instance.EmptyPositionInMap();
+            Vector2 respawnPosition = GameManager.Instance.objSpawnerManager.EmptyPositionInMap();
             for (var i = 0; i < snakeBlocks.Count; i++)
             {
                 snakeBlocks[i].transform.position = respawnPosition;
@@ -142,8 +142,8 @@ public class SnakeController : MonoBehaviour
         snakeBlocks[0].transform.rotation = snakeBlocks[1].transform.rotation;
 
         //UpdateSprites
-        snakeBlocks[0].GetComponent<SpriteRenderer>().sprite = GameManager.Instance.SpriteSelector(snakeBlocks[0].blockType,0);
-        snakeBlocks[1].GetComponent<SpriteRenderer>().sprite = GameManager.Instance.SpriteSelector(snakeBlocks[1].blockType,1);
+        snakeBlocks[0].GetComponent<SpriteRenderer>().sprite = GameManager.Instance.objSpawnerManager.SpriteSelector(snakeBlocks[0].blockType,0);
+        snakeBlocks[1].GetComponent<SpriteRenderer>().sprite = GameManager.Instance.objSpawnerManager.SpriteSelector(snakeBlocks[1].blockType,1);
         snakeBlocks[0].GetComponent<SpriteRenderer>().color = snakeBlocks[1].GetComponent<SpriteRenderer>().color;
 
         //ModifySpeed
@@ -153,6 +153,6 @@ public class SnakeController : MonoBehaviour
 
         Color auxColor = snakeBlocks[0].GetComponent<SpriteRenderer>().color;
         auxColor.a = 1f;
-        GameManager.Instance.SpawnNewBlock(auxColor, snakeIndex);
+        GameManager.Instance.objSpawnerManager.SpawnNewBlock(auxColor, snakeIndex);
     }
 }
